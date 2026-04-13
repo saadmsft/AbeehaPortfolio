@@ -414,9 +414,14 @@
                 gap: 4px 0;
             }
         }
+        .download-btn { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #4a9f7f, #3a8a6c); color: #fff; border: none; padding: 16px 28px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; box-shadow: 0 8px 30px rgba(74,159,127,0.3); transition: all 0.3s; z-index: 100; display: flex; align-items: center; gap: 10px; }
+        .download-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(74,159,127,0.4); }
+        .download-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+        @media print { .download-btn { display: none; } }
     </style>
 </head>
 <body>
+    <button class="download-btn" onclick="window.print()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button>
     <div class="resume">
 
         <!-- HEADER -->
