@@ -1,0 +1,8 @@
+thumbs/
+folios/
+*.png
+!pages/*.png
+portfolio-*.png
+script.js
+styles.css
+.DS_Store
