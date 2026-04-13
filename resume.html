@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abeeha Batool — Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================
+           SCREEN STYLES — Dark Theme
+           ============================================ */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0e0e0e;
+            color: #d4d4d4;
+            line-height: 1.45;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .resume {
+            width: 210mm;
+            max-width: 100%;
+            background: #141414;
+            border: 1px solid #1e1e1e;
+            padding: 36px 40px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle top accent line */
+        .resume::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4a9f7f, #6dbfa0, #4a9f7f);
+        }
+
+        /* ============================================
+           HEADER
+           ============================================ */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #222;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: #f0f0f0;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #4a9f7f;
+        }
+
+        .contact {
+            text-align: right;
+            font-size: 0.65rem;
+            line-height: 1.65;
+            color: #999;
+            flex-shrink: 0;
+            padding-top: 4px;
+        }
+
+        .contact a {
+            color: #6dbfa0;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-label {
+            color: #555;
+            margin-right: 2px;
+        }
+
+        /* ============================================
+           SECTION HEADINGS
+           ============================================ */
+        .section-title {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #4a9f7f;
+            margin-bottom: 6px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #1e1e1e;
+        }
+
+        section {
+            margin-bottom: 12px;
+        }
+
+        /* ============================================
+           PROFILE
+           ============================================ */
+        .profile-text {
+            font-size: 0.65rem;
+            line-height: 1.55;
+            color: #b0b0b0;
+        }
+
+        /* ============================================
+           TWO COLUMN LAYOUT
+           ============================================ */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 28px;
+        }
+
+        /* ============================================
+           EDUCATION
+           ============================================ */
+        .edu-item {
+            margin-bottom: 5px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-main {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+
+        .edu-degree {
+            font-size: 0.6rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        .edu-detail {
+            font-size: 0.58rem;
+            color: #666;
+        }
+
+        /* ============================================
+           EXPERIENCE
+           ============================================ */
+        .exp-title {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+
+        .exp-desc {
+            font-size: 0.6rem;
+            color: #999;
+        }
+
+        /* ============================================
+           SKILLS
+           ============================================ */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 28px;
+        }
+
+        .skill-category {
+            margin-bottom: 0;
+        }
+
+        .skill-label {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: #4a9f7f;
+            display: inline;
+        }
+
+        .skill-list {
+            font-size: 0.6rem;
+            color: #b0b0b0;
+            display: inline;
+        }
+
+        /* ============================================
+           PROJECTS
+           ============================================ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 28px;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .project-name {
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: #e0e0e0;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .project-sep {
+            font-size: 0.55rem;
+            color: #333;
+            flex-shrink: 0;
+        }
+
+        .project-desc {
+            font-size: 0.55rem;
+            color: #777;
+            line-height: 1.45;
+        }
+
+        /* ============================================
+           FOOTER ROW
+           ============================================ */
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.6rem;
+            color: #999;
+            padding-top: 8px;
+            border-top: 1px solid #1e1e1e;
+            margin-top: 4px;
+        }
+
+        .footer-label {
+            font-weight: 600;
+            color: #4a9f7f;
+        }
+
+        /* ============================================
+           PRINT STYLES — Clean Black on White
+           ============================================ */
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm 14mm 12mm 14mm;
+            }
+
+            html {
+                font-size: 16px;
+            }
+
+            body {
+                background: #fff;
+                color: #1a1a1a;
+                padding: 0;
+                display: block;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resume {
+                width: 100%;
+                max-width: 100%;
+                background: #fff;
+                border: none;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .resume::before {
+                background: #2d6651;
+                height: 1.5px;
+            }
+
+            .header {
+                border-bottom-color: #ddd;
+            }
+
+            h1 {
+                color: #111;
+            }
+
+            .subtitle {
+                color: #2d6651;
+            }
+
+            .contact {
+                color: #555;
+            }
+
+            .contact a {
+                color: #2d6651;
+                text-decoration: none;
+            }
+
+            .contact-label {
+                color: #888;
+            }
+
+            .section-title {
+                color: #2d6651;
+                border-bottom-color: #e0e0e0;
+            }
+
+            .profile-text {
+                color: #333;
+            }
+
+            .edu-main,
+            .exp-title,
+            .project-name {
+                color: #111;
+            }
+
+            .edu-degree,
+            .exp-desc {
+                color: #444;
+            }
+
+            .edu-detail {
+                color: #777;
+            }
+
+            .skill-label,
+            .footer-label {
+                color: #2d6651;
+            }
+
+            .skill-list,
+            .project-desc {
+                color: #444;
+            }
+
+            .project-sep {
+                color: #ccc;
+            }
+
+            .footer-row {
+                border-top-color: #e0e0e0;
+                color: #555;
+            }
+
+            a[href]::after {
+                content: none;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE — Small Screens
+           ============================================ */
+        @media screen and (max-width: 680px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .resume {
+                padding: 24px 20px 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .contact {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .two-col,
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Abeeha Batool</h1>
+                <div class="subtitle">Fashion Design Student &nbsp;|&nbsp; Bridal Couture &amp; Textile Innovation</div>
+            </div>
+            <div class="contact">
+                <span class="contact-label">T</span> 0322-9011109<br>
+                <span class="contact-label">E</span> <a href="mailto:abeeeha228@gmail.com">abeeeha228@gmail.com</a><br>
+                <span class="contact-label">U</span> <a href="mailto:23-228.fys@pifd.edu.pk">23-228.fys@pifd.edu.pk</a><br>
+                <span class="contact-label">A</span> 109 H-2 Wapda Town, Lahore, Phase 1<br>
+                <span class="contact-label">W</span> <a href="https://abeeha.design" target="_blank">abeeha.design</a>
+            </div>
+        </header>
+
+        <!-- PROFILE -->
+        <section>
+            <div class="section-title">Profile</div>
+            <p class="profile-text">
+                Dedicated Fashion Design student at PIFD (Class of '27) specializing in bridal couture, 3D textile development, and experimental draping. Combines traditional hand embroidery and garment construction with digital design proficiency in Adobe Creative Suite, Procreate, and CLO 3D. Passionate about bringing meticulous handcraft precision to luxury bridal collections, with experience across 13 design projects spanning kidswear, womenswear, menswear, and textile art.
+            </p>
+        </section>
+
+        <!-- EDUCATION & EXPERIENCE — Side by Side -->
+        <div class="two-col">
+            <section>
+                <div class="section-title">Education</div>
+                <div class="edu-item">
+                    <div class="edu-main">Pakistan Institute of Fashion and Design (PIFD), Lahore</div>
+                    <div class="edu-degree">B.Des Fashion Design, 2023 &ndash; 2027 (Expected)</div>
+                    <div class="edu-detail">3rd Year, Semester 6 &mdash; Focus: Textile Development &amp; Experimental Draping</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-main">KIPS College for Girls, Lahore</div>
+                    <div class="edu-degree">Intermediate (Pre-Medical), 2021 &ndash; 2023</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-main">KIPS High School for Girls, Lahore</div>
+                    <div class="edu-degree">Matriculation (Computer Science), 2019 &ndash; 2021</div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">Experience</div>
+                <div class="exp-title">Backstage Management &mdash; LAAM Fashion Week</div>
+                <div class="exp-desc">Coordinated backstage operations for designer shows, managing model lineup sequencing and quick-change logistics.</div>
+            </section>
+        </div>
+
+        <!-- TECHNICAL SKILLS -->
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <span class="skill-label">Design Software: </span>
+                    <span class="skill-list">Adobe Photoshop, Illustrator, Procreate, CLO 3D, Canva</span>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-label">Garment: </span>
+                    <span class="skill-list">Pattern Making, Construction &amp; Sewing, Draping, Subtraction Cutting, Tech Packs</span>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-label">Textile: </span>
+                    <span class="skill-list">Hand Embroidery (Satin, Blanket, 3D), Surface Design, Print Making, Fabric Manipulation</span>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-label">Design: </span>
+                    <span class="skill-list">Fashion Illustration, Digital Illustration, Mood Boarding, Research, Technical Drawings</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESIGN PROJECTS -->
+        <section>
+            <div class="section-title">Design Projects</div>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <span class="project-name">Pond Whimsy Kidswear</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Nature-inspired kidswear with hand-felted elements, original prints, full garment development</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Exotic Wonderland</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Womenswear collection with exotic botanical illustrations and tropical flora inspiration</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Menswear &amp; Shoot</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Complete menswear development, pattern work, construction, and editorial photoshoot</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Shirt Manipulation</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Experimental deconstruction and manipulation techniques with editorial documentation</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Aquatic Life</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Aquatic-themed textile and design exploration</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Subtraction Cutting</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Advanced pattern cutting using subtraction methods for innovative silhouettes</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Royall Tall Shirts</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Shirt collection with tailoring focus</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Sahar Print Making</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Original screen printing project exploring pattern repetition and colorways</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Eco Futurism</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Sustainable fashion with eco-friendly materials and futuristic design concepts</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Androon Lahore</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Cultural research documenting heritage architecture and crafts of inner Lahore</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Digital Renderings</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Digital fashion illustrations and 3D garment visualizations in Procreate</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">3D Avocado Embroidery</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">90+ hours sculptural embroidery on denim; satin stitch, 3D padding, wire structure</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Draping</span>
+                    <span class="project-sep">&mdash;</span>
+                    <span class="project-desc">Experimental draping exploring volume, structure, and fabric behavior on dress forms</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER: Languages & Interests -->
+        <div class="footer-row">
+            <div><span class="footer-label">Languages: </span>English, Urdu, French (Basic)</div>
+            <div><span class="footer-label">Interests: </span>Painting, Crochet</div>
+        </div>
+
+    </div>
+</body>
+</html>
